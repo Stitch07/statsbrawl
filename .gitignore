@@ -1,0 +1,5 @@
+data/
+# virtualenv root
+venv/
+# credentials file
+auth.json
