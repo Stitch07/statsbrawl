@@ -1,3 +1,5 @@
+import asyncio
+
 import brawlstats
 import numpy as np
 
@@ -23,6 +25,7 @@ class API:
             val = np.mean(trophies) if _type == 'mean' else np.max(trophies)
             brawlers[brawler] = val
             cb()
+            await asyncio.sleep(1)
         return brawlers
 
     async def top_brawlers(self, limit=50, cb=lambda: None):
@@ -37,6 +40,7 @@ class API:
                         brawlers[brawler.name] += brawler.trophies
                     else:
                         brawlers[brawler.name] = brawler.trophies
+                await asyncio.sleep(1)
             except TimeoutError:
                 continue
         return brawlers
