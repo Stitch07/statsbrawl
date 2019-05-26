@@ -1,4 +1,4 @@
-brawlstats==2.3.7
+brawlstats==2.3.8
 docopt==0.6.2
 matplotlib==3.0.3
 numpy==1.16.3
